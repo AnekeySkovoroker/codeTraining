@@ -11,16 +11,16 @@ import SnapKit
 class PersonalDataAlertViewController: UIViewController {
     
     //MARK: Interface
-    private lazy var alertView = UIView()
+    private lazy var alertView = createAlertView()
     
-    private lazy var alertTitle = UILabel()
+    private lazy var alertTitle = createTitleLabel()
 
-    private lazy var checkBoxImage = UIImageView()
-    private lazy var checkBoxLabel = UILabel()
+    private lazy var checkBoxImage = createCheckBoxImage()
+    private lazy var checkBoxLabel = createCheckBoxLabel()
     
-    private lazy var alertOkButton = UIButton()
+    private lazy var alertOkButton = createAlertOkBtn()
 
-    private lazy var bImageView = UIImageView()
+    private lazy var bImageView = createImageView()
 
     //MARK: Additional
     private var isChecked = false
@@ -39,12 +39,6 @@ extension PersonalDataAlertViewController {
     //MARK: View style
     private func setupUI() {
         self.view.backgroundColor = .systemBackground
-        self.alertTitle = createTitleLabel()
-        self.alertOkButton = createAlertOkBtn()
-        self.checkBoxImage = createCheckBoxImage()
-        self.checkBoxLabel = createCheckBoxLabel()
-        self.bImageView = createImageView()
-        self.alertView = createAlertView()
     }
     
     private func createTitleLabel() -> UILabel {
@@ -93,10 +87,6 @@ extension PersonalDataAlertViewController {
         button.layer.cornerRadius = Constants.Size.okButtonCornerRadius
         button.isEnabled = false
         return button
-    }
-    
-    private func setBackgroundColor() {
-        
     }
     
     private func createImageView() -> UIImageView {
